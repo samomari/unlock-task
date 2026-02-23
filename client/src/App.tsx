@@ -22,7 +22,7 @@ function App() {
 
     setLoading(true);
     try {
-      const res = await fetch("/ask", {
+      const res = await fetch("https://unlock-task.onrender.com/ask", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,7 +38,7 @@ function App() {
 
       const data = await res.json();
       setAnswer(data.answer);
-    } catch (error) {
+    } catch (err) {
       setError("Network error");
     } finally {
       setLoading(false);
